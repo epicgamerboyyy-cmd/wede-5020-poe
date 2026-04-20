@@ -36,9 +36,11 @@ Phase 3 (Design): CSS Styling and Responsiveness (Due Date for Part 2)
 Phase 4 (Functionality): JavaScript and Deployment (Due Date for Part 3)
 
 ## Sitemap
-
-![Website Sitemap](img/mysitemap.png) <br> (The one here is only an example, include your own site map)
+![alt text](img/SITEMAP.png)
 
 ## References
 
-Ensure that all sources used in your assignment are cited and referenced using the Harvard referencing style.
+https://youtu.be/lI3iZ5xMII8?si=jAB-3bTbr3FAu3m2
+Google Gemini. 2026. AI-assisted structural planning and wireframe logic for WEDE5020 Portfolio. [Large Language Model].
+Mozilla. 2026. MDN Web Docs: HTML Semantic Elements. Available at: https://developer.mozilla.org/en-US/docs/Glossary/Semantics [Accessed 18 April 2026].
+Pexels. 2026. Solar Panels on House Roof.  Available at: https://www.pexels.com/search/solar%20panels/ [Accessed 19 April 2026].
