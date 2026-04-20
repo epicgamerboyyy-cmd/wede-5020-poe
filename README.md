@@ -3,7 +3,7 @@ Your project's title
 
 ## Student Information
 **Student number:** ST10526279 <br>
-**Student Name:** Orapeleng Motaus
+**Student Name:** Orapeleng Motau
 
 ## Project Overview
 
