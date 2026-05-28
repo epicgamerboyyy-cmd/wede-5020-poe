@@ -146,7 +146,7 @@ nav ul li a:focus {
     outline-offset: 2px;
 }
 
-/* ===== HERO BANNER IMAGE ===== */
+/* HERO BANNER IMAGE */
 .hero-banner-container {
     width: 100%;
     max-height: 22rem;
@@ -161,7 +161,7 @@ nav ul li a:focus {
     display: block;
 }
 
-/* ===== HERO SECTION ===== */
+/* HERO SECTION  */
 .hero {
     background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-card) 100%);
     padding: 5rem 1.5rem;
@@ -183,7 +183,7 @@ nav ul li a:focus {
     margin-right: auto;
 }
 
-/* ===== CTA BUTTON ===== */
+/* CTA BUTTON  */
 .cta-button {
     display: inline-block;
     padding: 0.875rem 2rem;
@@ -214,14 +214,14 @@ nav ul li a:focus {
     outline-offset: 3px;
 }
 
-/* ===== INTRO SECTION ===== */
+/* INTRO SECTION  */
 .intro {
     max-width: 75rem;
     margin: 0 auto;
     padding: 3rem 1.5rem;
 }
 
-/* ===== SERVICES SECTION ===== */
+/*  SERVICES SECTION  */
 .services {
     max-width: 75rem;
     margin: 0 auto;
