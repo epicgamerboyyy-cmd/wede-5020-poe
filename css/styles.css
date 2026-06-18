@@ -431,6 +431,166 @@ footer a:hover {
     color: var(--accent);
 }
 
+/* ===== FORM VALIDATION FEEDBACK ===== */
+.error {
+    color: #e74c3c;
+    font-size: 0.82rem;
+    margin-top: 0.2rem;
+    display: block;
+    min-height: 1rem;
+}
+
+.success-msg {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background-color: rgba(46, 204, 113, 0.12);
+    border: 1px solid var(--accent);
+    border-radius: 0.375rem;
+    color: var(--accent);
+    font-size: 0.97rem;
+    line-height: 1.5;
+}
+
+/* ===== ENQUIRY RESPONSE BLOCK ===== */
+.form-response {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.form-response h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.response-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.response-table th,
+.response-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.97rem;
+}
+
+.response-table th {
+    color: var(--text-muted);
+    font-weight: 600;
+    width: 40%;
+}
+
+.response-note {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===== ACCORDION ===== */
+.faq-section {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem 3rem;
+}
+
+.faq-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.accordion-item {
+    background-color: var(--bg-card);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-card);
+    border: none;
+    border-left: 4px solid var(--primary);
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-family: inherit;
+}
+
+.accordion-header:hover {
+    background-color: #263326;
+    color: var(--primary);
+}
+
+.accordion-header.active {
+    background-color: #263326;
+    color: var(--primary);
+    border-left-color: var(--accent);
+}
+
+.accordion-icon {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary);
+    transition: transform 0.25s ease;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+    color: var(--accent);
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+
+.accordion-body p {
+    padding: 1rem 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.97rem;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== CONTACT DETAILS GRID — 4 CARDS ===== */
+.contact-details {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 /* ===================================================================
    RESPONSIVE DESIGN — MEDIA QUERIES
    Breakpoints: desktop (>1024px) | tablet (768–1024px) | mobile (<768px)
