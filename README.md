@@ -31,7 +31,7 @@ Helios Solar Solutions is a specialised renewable energy provider based in South
 | Phase 1 (Planning) | Research and Proposal | Complete |
 | Phase 2 (Structure) | HTML Content and Sitemap | Complete |
 | Phase 3 (Design) | CSS Styling and Responsiveness | Complete |
-| Phase 4 (Functionality) | JavaScript and Deployment | Upcoming |
+| Phase 4 (Functionality) | JavaScript and Deployment | Complete |
 
 ---
 
@@ -106,6 +106,45 @@ The `srcset` and `sizes` attributes are applied to all banner images:
 > Screenshots captured using browser developer tools at desktop (1440px), tablet (768px), and mobile (375px) viewports.
 
 *(Screenshot evidence to be included here)*
+
+---
+
+## Part 3 — JavaScript Functionality and SEO
+
+### JavaScript Enhancements
+
+#### Form Validation (`js/enquiry.js`, `js/contact.js`)
+Both forms use client-side JavaScript validation. Inline error messages appear under each field that fails validation. On success:
+- The enquiry form displays a response block showing the estimated cost and availability for the selected service.
+- The contact form compiles the user's input into a pre-filled `mailto:` link and opens the user's default email client.
+
+Phone number validation on the contact form uses a regex pattern that accepts South African numbers in both `072 210 4642` and `+27 72 210 4642` formats.
+
+#### Accordion (`js/services.js`)
+An interactive FAQ accordion was added to the Services page. Clicking a question header toggles the answer panel open or closed using a `max-height` CSS transition. The component is keyboard accessible — users can navigate and activate headers using `Enter` or `Space`. The first item opens automatically on page load.
+
+#### Scroll-Reveal Animations (`js/main.js`)
+Sections on the Home page are given the `fade-in` CSS class and animate into view as the user scrolls. The animations use the `IntersectionObserver` API. A fallback ensures elements are always visible in browsers that do not support `IntersectionObserver`.
+
+### SEO
+
+#### On-Page SEO
+- `<meta name="description">` and `<meta name="keywords">` added to all five pages with relevant, page-specific content.
+- All pages already use a correct heading hierarchy (`h1` → `h2` → `h3`).
+- All images have descriptive `alt` text.
+- Internal links connect all five pages via the navigation bar.
+
+#### Technical SEO
+- `robots.txt` — instructs search engine crawlers to allow all pages and references the sitemap.
+- `sitemap.xml` — lists all five pages with `lastmod`, `changefreq`, and `priority` fields.
+
+### References (Part 3)
+
+- Mozilla. 2026. MDN Web Docs: Constraint Validation API. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation [Accessed June 2026].
+- Mozilla. 2026. MDN Web Docs: IntersectionObserver. Available at: https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver [Accessed June 2026].
+- Mozilla. 2026. MDN Web Docs: max-height transition. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/max-height [Accessed June 2026].
+- Google. 2026. Search Central: Sitemaps. Available at: https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview [Accessed June 2026].
+- Google. 2026. Search Central: robots.txt. Available at: https://developers.google.com/search/docs/crawling-indexing/robots/intro [Accessed June 2026].
 
 ---
 

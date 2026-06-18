@@ -6,6 +6,39 @@ This project follows [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [3.0.0] — 2026-06-18 — Part 3: JavaScript Functionality and SEO
+
+### Added
+- `js/enquiry.js` — client-side validation for the enquiry form; shows a cost estimate and availability response after submission without reloading the page
+- `js/contact.js` — client-side validation for the contact form; compiles user input into a pre-filled `mailto:` link that opens the user's email client
+- `js/services.js` — accordion component on the Services page FAQ section; keyboard-accessible with `Enter` and `Space` support
+- `js/main.js` — scroll-reveal fade-in animation on the Home page using the `IntersectionObserver` API; falls back gracefully on unsupported browsers
+- FAQ accordion section added to `services.html` with five common questions and answers
+- Contact form added to `contact.html` with full validation (name, email, optional phone, message type, message)
+- `robots.txt` — allows all crawlers, references the sitemap
+- `sitemap.xml` — lists all five pages with `lastmod`, `changefreq`, and `priority`
+- SEO `<meta name="description">` and `<meta name="keywords">` tags added to all five pages
+- `.error` CSS class for inline validation error messages
+- `.success-msg` CSS class for success feedback after form submission
+- `.form-response` block with a table showing the estimated cost and availability (enquiry page)
+- Full accordion CSS: `.accordion`, `.accordion-header`, `.accordion-body`, `.accordion-icon` with smooth `max-height` transition
+- `.fade-in` and `.fade-in.visible` CSS for scroll-reveal animations
+- Address and operating hours added to the contact info cards
+
+### Changed
+- `enquiry.html` — form action changed from `#` to JavaScript handler; `id="enquiryForm"` added; error `<span>` elements added after each input; submit button text updated to "Get My Estimate"
+- `contact.html` — added phone number card and hours card to the contact details grid; added full contact form with mailto functionality
+- `services.html` — FAQ accordion section added below the existing services grid
+- `index.html` — `fade-in` class added to hero and intro sections; `js/main.js` linked
+- `about.html` — SEO meta tags added
+- `README.md` — Phase 4 status updated to "Complete"; Part 3 documentation section added
+
+### Fixed
+- `contact.html` — resolved leftover Git merge conflict markers from Part 2 development
+- Phone validation uses South African number format (`0xx xxx xxxx` or `+27xx xxx xxxx`)
+
+---
+
 ## [2.0.0] — 2026-05-28 — Part 2: CSS Styling and Responsiveness
 
 ### Added
