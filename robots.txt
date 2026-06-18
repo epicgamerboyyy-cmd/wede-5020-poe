@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://epicgamerboyyy-cmd.github.io/wede-5020-poe/sitemap.xml
