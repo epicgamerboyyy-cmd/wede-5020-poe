@@ -1,4 +1,4 @@
-// Enquiry form validation + cost/availability response
+// Enquiry form validation + AJAX submission + cost/availability response
 // Part 3 - JavaScript functionality
 
 var serviceInfo = {
@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var name = document.getElementById('name').value.trim();
         var email = document.getElementById('email').value.trim();
         var interest = document.getElementById('interest').value;
+        var message = document.getElementById('message').value.trim();
         var isValid = true;
 
         if (name.length < 2) {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             isValid = false;
         }
 
-        // basic email check - i looked this up on MDN
+        // basic email check
         var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             showError('emailError', 'That email address does not look right');
@@ -53,24 +54,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!isValid) return;
 
-        var info = serviceInfo[interest];
-        var selectedLabel = document.getElementById('interest').options[document.getElementById('interest').selectedIndex].text;
+        var submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
-        var responseDiv = document.getElementById('enquiryResponse');
-        responseDiv.innerHTML =
-            '<h3>Thanks, ' + name + '!</h3>' +
-            '<p>Here is what we can offer for <strong>' + selectedLabel + '</strong>:</p>' +
-            '<table class="response-table">' +
-            '<tr><th>Estimated Cost</th><td>' + info.price + '</td></tr>' +
-            '<tr><th>Availability</th><td>' + info.availability + '</td></tr>' +
-            '</table>' +
-            '<p class="response-note">' + info.note + '</p>' +
-            '<p>We will also send more details to <strong>' + email + '</strong> within 24 hours.</p>';
+        // AJAX submission - sends form data asynchronously without reloading the page
+        var formData = {
+            name: name,
+            email: email,
+            interest: interest,
+            message: message
+        };
 
-        responseDiv.style.display = 'block';
-        responseDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+        .then(function (response) {
+            if (!response.ok) throw new Error('Server error');
+            return response.json();
+        })
+        .then(function (data) {
+            // submission was successful - show the response
+            var info = serviceInfo[interest];
+            var selectedLabel = document.getElementById('interest').options[document.getElementById('interest').selectedIndex].text;
 
-        form.reset();
+            var responseDiv = document.getElementById('enquiryResponse');
+            responseDiv.innerHTML =
+                '<h3>Thanks, ' + name + '!</h3>' +
+                '<p>Your enquiry has been received. Here is what we can offer for <strong>' + selectedLabel + '</strong>:</p>' +
+                '<table class="response-table">' +
+                '<tr><th>Estimated Cost</th><td>' + info.price + '</td></tr>' +
+                '<tr><th>Availability</th><td>' + info.availability + '</td></tr>' +
+                '</table>' +
+                '<p class="response-note">' + info.note + '</p>' +
+                '<p>We will send more details to <strong>' + email + '</strong> within 24 hours.</p>';
+
+            responseDiv.style.display = 'block';
+            responseDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            form.reset();
+        })
+        .catch(function (err) {
+            // if the request fails show an error
+            showError('nameError', 'Something went wrong. Please try again or contact us directly.');
+        })
+        .finally(function () {
+            submitBtn.textContent = 'Get My Estimate';
+            submitBtn.disabled = false;
+        });
     });
 });
 
